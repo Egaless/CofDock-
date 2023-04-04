@@ -1,4 +1,4 @@
-# Enzyme-Ligand Docking
+# Enzyme-Ligand Docking and Graph reprensation 
 
 This repository contains a program for docking a ligand on an enzyme with a bound cofactor, as well as utility functions for preparing the enzyme and ligand files for docking, finding the best binding pocket, and creating a reaction graph of the complex. The program uses the GPU-accelerated docking software Gnina for docking, P2Rank for finding the best binding pocket, AutoDock Tools for preparing the enzyme and ligand files, BagPype and PyTorch Geometric for creating the reaction graph.
 
@@ -30,7 +30,7 @@ Arguments:
 
  Return:
  
- - Docked liagnd File : 
+ - Docked ligand file.sdf 
  
  
  
@@ -38,7 +38,7 @@ Arguments:
 
 ## Requirements : 
 
-- `biopandas`
+- `biopandas` : python mudle to read pdb files as frames
 - `P2rank` : https://github.com/rdk/p2rank 
 
 
@@ -100,7 +100,50 @@ A tuple containing four elements:
 - `RES_N` (int): Residue number of the target residue.
  
  
- ## PdbTools 
+ 
+ 
+ ## Protein Complex Graph Tools
+ 
+ ## Requirements
+ 
+  -`Bagpype` : https://github.com/yalirakilab/BagPype
+  - `networkx` : python module
+  - `pytorch-geometrics` : https://pytorch-geometric.readthedocs.io/en/latest/install/installation.html 
+
+### `PDB_to_GRAPH(complex_file: str, complex_name: str) -> None`
+
+Transform a complex PDB file to a graph.
+
+Arguments:
+
+- `complex_file` (str): The path to the complex file in PDB format.
+- `complex_name` (str): The name of the complex.
+
+Returns: 
+
+- `BagPype Files` csv with all the interactions between atoms of the complex. for further informations, go see BagPype Github, linked hereinabove.
+
+### `Reaction_GRAPH(complex_file: str, center_elements: List[str], complex_name: str, chain: str) -> Tuple[networkx.Graph, torch_geometric.data.Data]`
+
+Create a reaction graph from a complex PDB file. The reaction graph consists of the center elements and their neighboring atoms interactions (covalent, intermolecular)
+
+Arguments:
+
+- `complex_file` (str): The path to the complex file in PDB format.
+- `center_elements` (List[str]): A list of the center elements (residues) for the reaction graph.
+- `complex_name` (str): The name of the complex.
+- `chain` (str): The chain ID of the protein.
+
+Returns:
+
+A tuple containing:
+
+- `graph` (networkx.Graph): The reaction graph.
+- `pytorch_graph` (torch_geometric.data.Data): The PyTorch Geometric representation of the graph.
+
+
+
+## PdbTools 
  
  ## Requirements
  
@@ -122,6 +165,7 @@ Arguments:
 Returns:
 
 The path to the prepared pdbqt file.
+- prepared to dock `receptor.pdbqt`
 
 ### `to_pdbqt_ligand(output_dir: str, ligand_name: str, ligand_path: str) -> str`
 
@@ -135,14 +179,19 @@ Arguments:
 
 Returns:
 
-The path to the prepared pdbqt file.
+- path to the prepared file
+- prepared to dock `ligand.pdbqt`
 
 ### `to_complex(receptor_file: str, docked_ligand_file: str, output_file: str) -> None`
 
-Combine receptor and ligand files into a complex pdb file.
+Combine receptor.pdb and ligand.pdb files into a complex.pdb file. **Very usefull function to use in any case, good to have** 
 
 Arguments:
 
 - `receptor_file` (str): Path to the receptor pdb file.
 - `docked_ligand_file` (str): Path to the docked ligand pdb file.
 - `output_file` (str): Path to the output complex pdb file.
+
+Returns :
+
+- `complex.pdb` file
