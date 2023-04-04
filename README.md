@@ -202,7 +202,7 @@ Returns :
 
 
 ## Covalent Docking 
- ## Working in progress ! 
+ ## Work in progress ! 
  We have still issues with those program, wich use : ADFR, AutoDock and Meeko to perform the covalent Docking. All the code is share, function are working but not give perfect result. 
 
 # Tips : 
