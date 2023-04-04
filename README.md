@@ -5,7 +5,7 @@ This repository contains a program for docking a ligand on an enzyme with a boun
 
 ## OS
 
-- **Only work on `Linux`** 
+- **Only works on `Linux`** 
 
 
 ## CofDock 
