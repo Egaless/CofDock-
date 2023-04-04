@@ -22,7 +22,7 @@ Here a exemple of what type of docking you can exept with CofDock :
 
 ## `best_pocket_docking(enzyme_path: str, enzyme_name: str, ligand_path: str, RES: str, output_dir: str, Size: float, center_atom_number: int) -> None`
 Dock a ligand on the best pocket knowing a residue where the cofactor is bound using GPU Gnina.
-
+The Docking is flexible, you can change the "flexibility parameter" directly in the code (on the prompt at the end of the function). 
 Arguments:
 
 - `enzyme_path` (str): Path to the enzyme file.
