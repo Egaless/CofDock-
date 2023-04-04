@@ -3,10 +3,8 @@
 This repository contains a program for docking a ligand on an enzyme with a bound cofactor, as well as utility functions for preparing the enzyme and ligand files for docking, finding the best binding pocket, and creating a reaction graph of the complex. The program uses the GPU-accelerated docking software Gnina for docking, P2Rank for finding the best binding pocket, AutoDock Tools for preparing the enzyme and ligand files, BagPype and PyTorch Geometric for creating the reaction graph.
 
 It has been created to study reactions witth enzyme + cofactor + ligand. More presisly, for Transaminase "Ping Pong" reactions. 
-Here a exemple of what type of docking you can exept with CofDock : 
-
-![image](https://user-images.githubusercontent.com/124147250/229942707-7af6c82b-99f2-449d-ba3a-0c95adb80ecd.png)
-
+I put an exemple of result in the Tutorial.pdf : 
+An exemple of docked complex.pdb of cofactor docking (good luck to find the pocket, It is pretty tiny, but still is real) 
 
 
 ## OS
