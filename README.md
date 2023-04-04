@@ -5,6 +5,7 @@ This repository contains a program for docking a ligand on an enzyme with a boun
 It has been created to study reactions witth enzyme + cofactor + ligand. More presisly, for Transaminase "Ping Pong" reactions. 
 Here a exemple of what type of docking you can exept with CofDock : 
 
+![image](https://user-images.githubusercontent.com/124147250/229942707-7af6c82b-99f2-449d-ba3a-0c95adb80ecd.png)
 
 
 
