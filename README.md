@@ -206,4 +206,4 @@ Returns :
  We have still issues with those program, wich use : ADFR, AutoDock and Meeko to perform the covalent Docking. All the code is share, function are working but not give perfect result. 
 
 # Tips : 
-Use CofDock for covalent docking. Dock the indermediate product to the reactive residue, you will hve a strong interactions bewteen them in the interactions graph. Go see the toturial.
+Use CofDock for covalent docking. Dock the indermediate product to the reactive residue, you will hve a strong interactions bewteen them in the interactions graph. Go see the toturial. To do so, found crystallized data where your cofactor is not covalently bound to the residue. 
