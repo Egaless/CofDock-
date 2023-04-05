@@ -30,7 +30,7 @@ Arguments:
 - `RES` (str): Residue to bind the ligand.
 - `output_dir` (str): Output directory.
 - `Size` (float): Box size.
-- `center_atom_number` (int): Number of the atom to center the box around.
+- `center_atom_number` (int): Number of the atom to center the box around (in the residue)
 
  Return:
  
