@@ -13,7 +13,7 @@ def best_pocket_docking(enzyme_path,enzyme_name,ligand_path, RES, output_dir, Si
     
         command = ( "gnina -r "+ enzyme_path +" -l "+ligand_path + " --center_x "+
           str(MID[0])+" --center_y "+str(MID[1])+" --center_z "+str(MID[2])+  
-           " --size_x "+str(box_size[0])+" --size_y "+str(box_size[1])+" --size_z "+str(box_size[2])+" --flexdist_ligand "+ligand_path+" --flexdist 1 -o "+output_dir+chain+"S.pdb")
+           " --size_x "+str(box_size[0])+" --size_y "+str(box_size[1])+" --size_z "+str(box_size[2])+" --flexdist_ligand "+ligand_path+" --flexdist 0 -o "+output_dir+chain+"S.pdb")
         print(command)
         os.system(command)        
         return 
