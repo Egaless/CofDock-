@@ -1,4 +1,4 @@
-
+import os 
 
 
 
@@ -29,3 +29,16 @@ def to_complex(receptor_file,docked_ligand_file,output_file) :
     import os 
     command =''' awk '/ENDMDL/{exit} {print}' '''+docked_ligand_file+''' > out.pdb && cat '''+receptor_file+''' out.pdb | grep "^ATOM" > '''+output_file+''' && echo "END" >> complexe.pdb '''
     os.system(command)
+
+    
+"""
+
+Change the name of a residue in a pdb file
+
+"""
+
+
+def Cofactor_Tag(i, o,path) :
+    command =" sed -i 's/{i}/{o}/g' {path} " 
+    os.system(command)
+    return 
