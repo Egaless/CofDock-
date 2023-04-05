@@ -1,5 +1,5 @@
 from Pypocket import *
-
+import os 
 """ 
 
 Docking A ligand on the best pocket knowing a RES where the cofactor is binded
